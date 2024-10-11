@@ -69,8 +69,8 @@ public class DLTKCore extends Plugin {
 
 	public static final boolean PERFOMANCE = false;
 
-	public static final boolean DEBUG = Boolean.valueOf(Platform.getDebugOption("org.eclipse.dltk.core/debug")) //$NON-NLS-1$
-			.booleanValue() ? true : true;
+	public static final boolean DEBUG = Boolean
+			.valueOf(Platform.getDebugOption("org.eclipse.dltk.core/debug")).booleanValue(); //$NON-NLS-1$	
 
 	public static final boolean SHOW_REINDEX = Boolean
 			.valueOf(Platform.getDebugOption("org.eclipse.dltk.core/show_reindex")).booleanValue(); //$NON-NLS-1$
