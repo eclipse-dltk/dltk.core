@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2005, 2016 IBM Corporation and others.
+ * Copyright (c) 2005, 2024 IBM Corporation and others.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0.
@@ -70,7 +70,7 @@ public class DLTKCore extends Plugin {
 	public static final boolean PERFOMANCE = false;
 
 	public static final boolean DEBUG = Boolean.valueOf(Platform.getDebugOption("org.eclipse.dltk.core/debug")) //$NON-NLS-1$
-			.booleanValue() ? true : true;
+			.booleanValue();
 
 	public static final boolean SHOW_REINDEX = Boolean
 			.valueOf(Platform.getDebugOption("org.eclipse.dltk.core/show_reindex")).booleanValue(); //$NON-NLS-1$
