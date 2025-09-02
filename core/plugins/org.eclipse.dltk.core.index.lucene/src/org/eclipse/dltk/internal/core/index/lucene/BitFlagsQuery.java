@@ -17,13 +17,13 @@ import java.text.MessageFormat;
 import org.apache.lucene.index.DocValues;
 import org.apache.lucene.index.LeafReaderContext;
 import org.apache.lucene.index.NumericDocValues;
-import org.apache.lucene.search.ConstantScoreScorer;
+import org.apache.lucene.search.ConstantScoreScorerSupplier;
 import org.apache.lucene.search.ConstantScoreWeight;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.QueryVisitor;
 import org.apache.lucene.search.ScoreMode;
-import org.apache.lucene.search.Scorer;
+import org.apache.lucene.search.ScorerSupplier;
 import org.apache.lucene.search.TwoPhaseIterator;
 import org.apache.lucene.search.Weight;
 import org.eclipse.dltk.ast.Modifiers;
@@ -82,13 +82,24 @@ public class BitFlagsQuery extends Query {
 		return new ConstantScoreWeight(this, 10) {
 
 			@Override
-			public Scorer scorer(LeafReaderContext context) throws IOException {
+			public boolean isCacheable(LeafReaderContext ctx) {
+				return DocValues.isCacheable(ctx, IndexFields.NDV_FLAGS);
+			}
 
+			@Override
+			public ScorerSupplier scorerSupplier(LeafReaderContext context)
+					throws IOException {
+
+				if (fTrueFlags == 0 && fFalseFlags == 0) {
+					return null;
+				}
 				NumericDocValues fields = context.reader()
 						.getNumericDocValues(IndexFields.NDV_FLAGS);
 				if (fields == null) {
 					return null;
 				}
+				int maxDoc = context.reader().maxDoc();
+
 				TwoPhaseIterator iterator = new TwoPhaseIterator(fields) {
 
 					@Override
@@ -108,12 +119,9 @@ public class BitFlagsQuery extends Query {
 						return 2;
 					}
 				};
-				return new ConstantScoreScorer(this, 10, scoreMode, iterator);
-			}
-
-			@Override
-			public boolean isCacheable(LeafReaderContext ctx) {
-				return DocValues.isCacheable(ctx, IndexFields.NDV_FLAGS);
+				return ConstantScoreScorerSupplier.fromIterator(
+						TwoPhaseIterator.asDocIdSetIterator(iterator), score(),
+						scoreMode, maxDoc);
 			}
 		};
 	}
