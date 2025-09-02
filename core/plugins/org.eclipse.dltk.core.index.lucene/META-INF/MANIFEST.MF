@@ -9,8 +9,8 @@ Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.dltk.core,
- org.apache.lucene.core;bundle-version="[9.4.0,10.0.0)",
- org.apache.lucene.analysis-common;bundle-version="[9.4.0,10.0.0)"
+ org.apache.lucene.core;bundle-version="[10.0.0,11.0.0)",
+ org.apache.lucene.analysis-common;bundle-version="[10.0.0,11.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.dltk.core.index.lucene
