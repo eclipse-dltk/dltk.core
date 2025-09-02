@@ -5,7 +5,7 @@
   <parent>
     <artifactId>rse</artifactId>
     <groupId>org.eclipse.dltk.rse</groupId>
-    <version>6.4.1-SNAPSHOT</version>
+    <version>6.4.2-SNAPSHOT</version>
     <relativePath>../..</relativePath>
   </parent>
   <artifactId>org.eclipse.dltk.rse.sdk</artifactId>

@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.eclipse.dltk</groupId>
 		<artifactId>dltk.build.all</artifactId>
-		<version>6.4.1-SNAPSHOT</version>
+		<version>6.4.2-SNAPSHOT</version>
 		<relativePath>../org.eclipse.dltk.releng/pom.xml</relativePath>
 	</parent>
 	<groupId>org.eclipse.dltk.core</groupId>
