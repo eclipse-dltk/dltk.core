@@ -15,8 +15,6 @@
             <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20220302172233/repository"/>
         </location>
         <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
-            <unit id="org.apache.lucene.core" version="9.4.2.v20221211-0752"/>
-            <unit id="org.apache.lucene.analysis-common" version="9.4.2.v20221211-0752"/>
             <unit id="javax.activation" version="1.2.2.v20221203-1659"/>
             <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository"/>
         </location>
@@ -76,7 +74,6 @@
             <unit id="org.eclipse.e4.emf.xpath" version="0.0.0"/>
             <unit id="org.eclipse.fx.osgi" version="0.0.0"/>
             <unit id="org.eclipse.search.core" version="0.0.0"/>
-            <unit id="org.apache.commons.jxpath" version="0.0.0"/>
             <unit id="org.apache.xmlgraphics" version="0.0.0"/>
             <unit id="org.apache.commons.io" version="0.0.0"/>
             <unit id="org.apache.commons.logging" version="0.0.0"/>
@@ -89,8 +86,6 @@
             <unit id="org.apache.xml.resolver" version="0.0.0"/>
             <unit id="com.sun.xml.bind" version="0.0.0"/>
 
-           
-            
             <unit id="org.apache.httpcomponents.httpcore" version="0.0.0"/>
             <unit id="org.apache.httpcomponents.httpclient" version="0.0.0"/>
             <unit id="org.apache.xmlrpc.client" version="0.0.0"/>
@@ -99,8 +94,10 @@
             <unit id="org.sat4j.core" version="0.0.0"/>
             <unit id="org.sat4j.pb" version="0.0.0"/>
             <unit id="org.apache.lucene.analysis-smartcn" version="0.0.0"/>
+            <unit id="org.apache.lucene.core" version="0.0.0"/>
+            <unit id="org.apache.lucene.analysis-common" version="0.0.0"/>
             
-            <repository location="https://download.eclipse.org/releases/2024-03"/>
+            <repository location="https://download.eclipse.org/releases/2025-06"/>
         </location>
         <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
             <unit id="org.eclipse.mylyn.commons.feature.feature.group" version="0.0.0"/>

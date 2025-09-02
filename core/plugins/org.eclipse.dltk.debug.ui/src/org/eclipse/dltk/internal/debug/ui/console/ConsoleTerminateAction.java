@@ -3,7 +3,7 @@
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0.
- * 
+ *
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
@@ -72,11 +72,11 @@ public class ConsoleTerminateAction extends Action implements IUpdate {
 		fWindow = window;
 		setToolTipText(ConsoleMessages.ConsoleTerminateAction_1);
 		setImageDescriptor(DebugPluginImages.getImageDescriptor(
-				IInternalDebugUIConstants.IMG_LCL_TERMINATE));
+				IInternalDebugUIConstants.IMG_ELCL_TERMINATE));
 		setDisabledImageDescriptor(DebugPluginImages.getImageDescriptor(
 				IInternalDebugUIConstants.IMG_DLCL_TERMINATE));
 		setHoverImageDescriptor(DebugPluginImages.getImageDescriptor(
-				IInternalDebugUIConstants.IMG_LCL_TERMINATE));
+				IInternalDebugUIConstants.IMG_ELCL_TERMINATE));
 
 		listener = new TerminateListener();
 		DebugPlugin.getDefault().getLaunchManager().addLaunchListener(listener);
